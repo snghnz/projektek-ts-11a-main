@@ -23,10 +23,17 @@ function áthaladóKerékpárosok(mérések: number[], óra: number){
 }
 
 function Patrik(mérések: number[]): number{
- //hf
+    let maximumIndexe = 0; // a leglesőt kinevezzük legnagyobbnak
+    for (let i = 0; i < mérések.length; i++) {
+      if (mérések[i] > mérések[maximumIndexe]) maximumIndexe=i;     
+    }
+    return maximumIndexe;
 }
 function patrikido(index: number): string{
-  return "6:30"
+    const időPercben = (6 * 60) + 15 + index * 15;
+    const óra = Math.floor(időPercben /60);
+    const perc = időPercben % 60;
+     return `${óra}:${perc}`
 }
 
 export default function SzamlalasPage(){
@@ -38,7 +45,9 @@ export default function SzamlalasPage(){
         stat.push({óra, áthaladók: áthaladóKerékpárosok(mérések, óra)})
     }
 
-    const áthaladásMax = Math
+    const áthaladásMax = Math.max(...stat.map((e) => e.áthaladók))
+    const max = Patrik(mérések)
+    const parik: string = patrikido(max)
 
     return(
       <div className="flex min-h-screen flex-col items-center bg-gray-200 p-6 text-gray-800">
@@ -63,6 +72,10 @@ export default function SzamlalasPage(){
             </div>
           ))}
         </div>
+      </div>
+       <div className="max-v-lg w-full rounded-2xl bg-white shadow-md">
+        <h2 className="font-bold">4. feladat</h2>
+        <p>Az áthaladók maximális száma: <span className="font-bold">{mérések[max]}</span> ; rögzítés időpontja: <span className="font-bold">{parik}</span> </p>
       </div>
     </div>
     );
