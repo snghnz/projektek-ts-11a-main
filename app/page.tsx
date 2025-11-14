@@ -15,18 +15,20 @@ const links: TLink[] = [
   { id: 5, href: "/use-effect-demo", label: "useEffect demo" },
   { id: 6, href: "/baratsagos-szamparok", label: "Barátságos számpárok" },
   { id: 7, href: "/flexbox", label: "Flexbox demo" },
+  { id: 8, href: "/dobozokkk", label: "Szállítás" },
+  { id: 9, href: "/hehe", label: "Are you bored?" },
 ];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-200">
-      <div className="flex flex-col items-center justify-center rounded-lg bg-white p-4 shadow-md">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-pink-300">
+      <div className="flex flex-col items-center justify-center rounded-lg bg-pink-500 p-4 shadow-md">
         <Image alt="Globe" height={100} src="globe.svg" width="100" />
-        <h1 className="mt-2 text-2xl font-bold">Hello World!</h1>
+        <h1 className="mt-2 text-2xl font-bold text-pink-800">Hello World!</h1>
         <ul className="mt-3 list-disc list-inside">
           {links.map((link) => (
             <li key={link.id}>
-              <Link className="text-blue-500 hover:underline" href={link.href}>
+              <Link className="text-pink-800 hover:underline" href={link.href}>
                 {link.label}
               </Link>
             </li>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AlignmentBar from "@/app/flexbox/AlignmentBar";
+import BackToMain from "@/components/BackToMain";
 
 export type AlignOptions = {
   label: string; // pi.: Top
@@ -52,13 +53,13 @@ export default function FlexboxDemo() {
         setAlignment={setV}
         title="Vertical"
       />
-      <div className={`flex flex-1 flex-wrap ${vertical} ${horizontal} gap-4 bg-yellow-100 p-4`}>
+      <div className={`flex flex-1 flex-wrap ${vertical} ${horizontal} gap-4 bg-pink-300 p-4`}>
         {/* AligmentBar helye */}
 
         {/* [...Array(3)] -> [undefined, undefined, undefined] */}
         {[...Array(divDb)].map((_, i) => (
           <div
-            className="text-white1 flex h-24 w-24 items-center justify-center rounded-xl border border-black bg-blue-400 text-3xl font-bold shadow-xl"
+            className="text-white1 flex h-24 w-24 items-center justify-center rounded-xl border border-pink-700 bg-pink-700 text-3xl font-bold shadow-xl"
             key={i}
           >
             {i + 1}
@@ -71,6 +72,8 @@ export default function FlexboxDemo() {
         setAlignment={setH}
         title="Horizontal"
       />
+      <div className="flex flex-col justify-center items-center"><BackToMain /></div>
+    
     </div>
   );
 }
