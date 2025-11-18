@@ -12,7 +12,7 @@ import React, { useState } from "react";
 export default function hehePage(){
   type Operation = "add" | "sub" | "mul" | "div";
 
- useState
+
   const [operation, setOperation] = useState<Operation>("add");
   const [a, setA] = useState<number | null>(null);
   const [b, setB] = useState<number | null>(null);
@@ -20,8 +20,8 @@ export default function hehePage(){
   const [resultMessage, setResultMessage] = useState<string>("");
 
   const generateNumbers = () => {
-    const randA = Math.floor(Math.random() * 10);
-    const randB = Math.floor(Math.random() * 10);
+    const randA = Math.floor(Math.random() * 9) +1;
+    const randB = Math.floor(Math.random() * 9) +1;
     setA(randA);
     setB(randB);
     setUserAnswer("");
